@@ -3,13 +3,47 @@
  */
 package org.example
 
+import java.util.logging.Logger
+
+val logger: Logger = Logger.getLogger("AppLogger")
+
 class App {
     val greeting: String
         get() {
-            return "Hello World!"
+            return "Hello Kotilin GHAS Demo App"
         }
 }
 
 fun main() {
     println(App().greeting)
+    
+    println("Enter you PAT to log into the service: ")
+    
+    val token = readLine()
+
+    println("Verifying...")
+
+    if (token != null && verifyToken(token)) {
+        println("Token verified successfully")
+    } else {
+        println("Token verification failed")
+    }
+}
+
+/**
+ * Verifies the given token.
+ *
+ * @param token The token to be verified.
+ * @return `true` if the token is valid, `false` otherwise.
+ */
+fun verifyToken(token: String): Boolean {
+    logger.info("Verifying token...")
+
+    if (token.startsWith("mct_") && token.matches(Regex("^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%^&+=]).{18,}$"))) {
+        logger.info("Token verified successfully")
+        return true
+    } else {
+        logger.warning("Token verification for token: $token")
+        return false
+    }
 }
