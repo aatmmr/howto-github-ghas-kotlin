@@ -1,3 +1,3 @@
-## Project Summary
+# How To: GitHub Advanced Security with Kotlin
 
 This project aims to provide a comprehensive guide on how to integrate GitHub Advanced Security (GHAS) with a Kotlin project. It covers the setup process, configuration options, and best practices for leveraging GHAS to enhance the security of your Kotlin applications. Whether you are a beginner or an experienced developer, this guide will help you get started with GHAS and ensure the security of your Kotlin projects.
