@@ -23,6 +23,7 @@ jobs:
         languages: java-kotlin
         build-mode: autobuild
         queries: security-extended,security-and-quality
+        packs: githubsecuritylab/codeql-java-queries
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
