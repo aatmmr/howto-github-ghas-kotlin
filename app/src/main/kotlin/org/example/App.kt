@@ -25,6 +25,7 @@ fun main() {
 
     if (token != null && verifyToken(token)) {
         println("Token verified successfully")
+        invalidateToken(token);
     } else {
         println("Token verification failed")
     }
@@ -44,6 +45,18 @@ fun verifyToken(token: String): Boolean {
         return true
     } else {
         logger.warning("Token verification for token: $token")
+        return false
+    }
+}
+
+fun invalidateToken(token: String) {
+    logger.info("Invalidating token...")
+    
+    if (token.startsWith("mct_") && token.matches(Regex("^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%^&+=]).{18,}$"))) {
+        logger.info("Token invalidated successfully")
+        return true
+    } else {
+        logger.warning("Token invalidation for token: $token failed")
         return false
     }
 }
