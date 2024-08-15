@@ -49,7 +49,7 @@ fun verifyToken(token: String): Boolean {
     }
 }
 
-fun invalidateToken(token: String) {
+fun invalidateToken(token: String): Boolean {
     logger.info("Invalidating token...")
     
     if (token.startsWith("mct_") && token.matches(Regex("^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%^&+=]).{18,}$"))) {
