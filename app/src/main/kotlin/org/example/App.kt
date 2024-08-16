@@ -49,6 +49,12 @@ fun verifyToken(token: String): Boolean {
     }
 }
 
+/**
+ * Invalidates the provided token.
+ *
+ * @param token The token to be invalidated.
+ * @return `true` if the token is successfully invalidated, `false` otherwise.
+ */
 fun invalidateToken(token: String): Boolean {
     logger.info("Invalidating token...")
     
